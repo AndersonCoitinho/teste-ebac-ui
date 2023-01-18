@@ -28,8 +28,15 @@ describe('Funcionalidade Página de produtos', () => {
 
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
         cy.get('.woocommerce-message').should('contain', quantidade + ' × “Abominable Hoodie” foram adicionados no seu carrinho.')
-
-
     });
     
+    it('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+        cy.addProdutos('Abominable Hoodie', 'M', 'Red', 2)
+    });
+
+    it('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+        cy.addProdutos('Aether Gym Pant', 32, 'Blue', 2)
+    });
+
+
 });
